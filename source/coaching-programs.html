@@ -35,13 +35,13 @@ layout: default
                 {% for name in course.faculty_members %}
                   {% assign person = site.data.people | where:"title", name | first %}
                   {% if person %}
-                    <a href="{{ person.name.slug }}.html" target="_blank">
-                      <div class="e-course-faculty column large-3 end" style="background-image: url('./img/faculty/{{ person.name.slug }}.jpg');">
+                    <a href="./people/{{ person.name.slug }}.html" target="_blank">
+                      <div class="e-course-faculty column large-3 end" style="background-image: url('/img/faculty/{{ person.name.slug }}.jpg');">
                         <p>{{ person.name.first }} {{ person.name.last }}</p>
                       </div>
                     </a>
                   {% else %}
-                    <div class="e-course-faculty column large-3 end" style="background-image: url('./img/faculty/{{person.id}}-{{ person.name.slug  }}.jpg');">
+                    <div class="e-course-faculty column large-3 end" style="background-image: url('/img/faculty/{{ person.name.slug  }}.jpg');">
                       <p>{{ name }}</p>
                     </div>
                   {% endif %}
@@ -50,7 +50,7 @@ layout: default
             </div>
             <div class="large-6 column">
               <p class="e-course-description">{{ course.description_short }}</p>
-              <a href="{{ course.id }}.html" class="b-button">more info</a>
+              <a href="{{ course.name }}.html" class="b-button">more info</a>
             </div>
           </div>
         </li>
@@ -78,13 +78,13 @@ layout: default
                 {% for name in course.faculty_members %}
                   {% assign person = site.data.people | where:"title", name | first %}
                   {% if person %}
-                    <a href="{{person.id}}-{{person.name.slug}}.html" target="_blank">
-                      <div class="e-course-faculty column large-3 end" style="background-image: url('./img/faculty/{{ person.name.slug }}.jpg');">
+                    <a href="{{person.name.slug}}.html" target="_blank">
+                      <div class="e-course-faculty column large-3 end" style="background-image: url('/img/faculty/{{ person.name.slug }}.jpg');">
                         <p>{{ person.name.first }} {{ person.name.last }}</p>
                       </div>
                     </a>
                   {% else %}
-                    <div class="e-course-faculty column large-3 end" style="background-image: url('./img/faculty/{{ person.name.slug  }}.jpg');">
+                    <div class="e-course-faculty column large-3 end" style="background-image: url('/img/faculty/{{ person.name.slug  }}.jpg');">
                       <p>{{name}}</p>
                     </div>
                   {% endif %}
@@ -93,7 +93,7 @@ layout: default
           </div>
           <div class="large-6 column">
             <p class="e-course-description">{{ course.description_short | safe }}</p>
-            <a href="{{ course.id }}.html" class="b-button">more info</a>
+            <a href="{{ course.name }}.html" class="b-button">more info</a>
           </div>
         </div>
         </li>
@@ -135,7 +135,7 @@ layout: default
   <div class="b-page-section">
     <div class="row">
       <div class="large-12 column">
-        <img src="./img/coaching-diagram2.png" alt="Coaching program Lifecycle">
+        <img src="/img/coaching-diagram2.png" alt="Coaching program Lifecycle">
       </div>
     </div>
     <div class="row">

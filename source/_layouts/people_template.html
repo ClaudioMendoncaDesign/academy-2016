@@ -6,9 +6,9 @@ layout: default
   <div class="b-faculty-header">
     <div class="row">
       <div class="large-8 column large-centered">
-        <div class="e-faculty-picture" style="background-image:url(./img/faculty/{{ name.slug }}.jpg"></div>
-        <h2>{{ name.first }} {{ name.last }}</h2>
-        <h3 class="e-tagline">{{ name.job }}</h3>
+        <div class="e-faculty-picture" style="background-image:url(/img/faculty/{{ page.name.slug }}.jpg"></div>
+        <h2>{{ page.name.first }} {{ page.name.last }}</h2>
+        <h3 class="e-tagline">{{ page.name.job }}</h3>
       </div>
     </div>
   </div>
@@ -16,8 +16,7 @@ layout: default
     <div class="row">
       <div class="large-8 column large-centered">
         <div class="e-course-passion">
-
-          <p>{{ description }}</p>
+          <p>{{ page.description }}</p>
         </div>
       </div>
     </div>
@@ -31,8 +30,7 @@ layout: default
     </div>
   </div>
   <ul class="b-course-list">
-    {% assign fullname = page.name.first + " " + page.name.last %}
-    {% assign person = site.data.people | where:"title", fullname | first %}
+    {% assign courses = site.data.coaching | where:"faculty_members", page.title %}
     {% for course in courses %}
       <li class="e-course-item">
         <div class="row">
@@ -43,8 +41,8 @@ layout: default
 
             <p class="e-course-application">APPLICATION DUE: {{ course.date.application }}</p>
             <div class="e-course-faculty-team">
-              <div class="e-course-faculty column large-3 end" style="background-image: url('./img/faculty/{{name.slug}}.jpg');">
-                <p>{{name.first}} {{name.last}}</p>
+              <div class="e-course-faculty column large-3 end" style="background-image: url('/img/faculty/{{ page.name.slug }}.jpg');">
+                <p>{{ page.name.first }} {{ page.name.last }}</p>
               </div>
             </div>
           </div>

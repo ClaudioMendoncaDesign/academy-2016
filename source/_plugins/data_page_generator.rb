@@ -31,20 +31,20 @@ module Jekyll
       @base = base
 
       # @dir is the directory where we want to output the page
-      # @name is the name of the page to generate
+      # @html_name is the name of the page to generate
       #
       # the value of these variables changes according to whether we
       # want to generate named folders or not
       filename = sanitize_filename(data[name]).to_s
       if index_files
         @dir = dir + (index_files ? "/" + filename + "/" : "")
-        @name =  "index" + "." + extension.to_s
+        @html_name =  "index" + "." + extension.to_s
       else
         @dir = dir
-        @name = filename + "." + extension.to_s
+        @html_name = filename + "." + extension.to_s
       end
 
-      self.process(@name)
+      self.process(@html_name)
       self.read_yaml(File.join(base, '_layouts'), template + ".html")
       self.data['title'] = data[name]
       # add all the information defined in _data for the current record to the
