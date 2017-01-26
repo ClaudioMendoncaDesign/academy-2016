@@ -50,7 +50,7 @@ layout: default
             </div>
             <div class="large-6 column">
               <p class="e-course-description">{{ course.description_short }}</p>
-              <a href="{{ course.name }}.html" class="b-button">more info</a>
+              <a href="/coaching/{{ course.name | downcase | replace: " ", "-" }}.html" class="b-button">more info</a>
             </div>
           </div>
         </li>
@@ -93,7 +93,7 @@ layout: default
           </div>
           <div class="large-6 column">
             <p class="e-course-description">{{ course.description_short | safe }}</p>
-            <a href="{{ course.name }}.html" class="b-button">more info</a>
+            <a href="/coaching/{{ course.name | downcase | replace: " ", "-" }}.html" class="b-button">more info</a>
           </div>
         </div>
         </li>
