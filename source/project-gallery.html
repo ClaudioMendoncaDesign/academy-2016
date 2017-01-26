@@ -71,7 +71,7 @@ layout: default
         <div class="e-pg-card column large-4 medium-6 b-filter-item">
           <a href="" class="b-card m-project">
             <article class="e-card-inner ">
-              <section class="e-card-front" {% if card.img_url %}style="background-image: url('img/faculty/{{card.img_url}}')"{% endif %}>
+              <section class="e-card-front" {% if card.img_url %}style="background-image: url('/img/faculty/{{card.img_url}}')"{% endif %}>
                 <p class="e-front-title">{% if card.short_title %}{{ card.short_title }}{% else %}{{ card.title }}{% endif %}</p>
               </section>
 
